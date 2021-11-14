@@ -14,7 +14,6 @@
         body {
             display: flex;
             align-items: center;
-            justify-content: center;
             flex-direction: column;
         }
 
@@ -22,10 +21,6 @@
             padding: 10pt;
             width: 50%;
             text-align: left;
-        }
-
-        :root {
-            --highlight-color: #85acff;
         }
     </style>
 </head>
@@ -39,7 +34,7 @@
     </form>
     {{range .Messages}}
     <div class="container">
-        <small style="font-weight: bold" ;>{{.Moment}}</small>
+        <small style="font-weight: bold">{{.Moment}}</small>
         <h4>{{.Content}}</h4>
     </div>
     {{end}}
