@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
-	"os"
+	"io/ioutil"
 	"text/template"
 	"time"
 )
@@ -17,11 +17,11 @@ var Messages []Message
 
 func saveMessages() {
 	m, _ := json.Marshal(Messages)
-	os.WriteFile("data.txt", m, 0644)
+	ioutil.WriteFile("data.txt", m, 0644)
 }
 
 func loadMessages() {
-	data, _ := os.ReadFile("data.txt")
+	data, _ := ioutil.ReadFile("data.txt")
 	json.Unmarshal(data, &Messages)
 }
 
